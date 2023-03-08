@@ -82,6 +82,7 @@ li {
   overflow: hidden;
 }
 .title span::after {
+  display: none;
   content: "";
   width: 100%;
   height: 100%;
@@ -118,31 +119,31 @@ li {
 }
 
 /* ANIMATION */
-.title span:nth-child(1):after {
-  animation: 1s cubic-bezier(1, 0, 0.6, 1) 0.9s translateY both;
+.title span:nth-child(1) {
+  animation: 1.5s cubic-bezier(0.6, 0.34, 0.42, 0.71) 1.4s scaleUp both;
 }
-.title span:nth-child(2):after {
-  animation: 1s cubic-bezier(1, 0, 0.6, 1) 1s translateY both;
+.title span:nth-child(2) {
+  animation: 1.5s cubic-bezier(0.6, 0.34, 0.42, 0.71) 1.4s scaleDown both;
 }
 
 .wrapper .content:nth-child(1)::after {
-  animation: 1.2s cubic-bezier(1, 0, 0.6, 1) 0.3s translateY both;
+  animation: 1.5s cubic-bezier(0.78, 0.16, 1, 1) 0.3s translateY both;
 }
 .wrapper .content:nth-child(2)::after {
-  animation: 1.2s cubic-bezier(1, 0, 0.6, 1) 0.4s translateY both;
+  animation: 1.5s cubic-bezier(0.78, 0.16, 1, 1) 0.45s translateY both;
 }
 .wrapper .content:nth-child(3)::after {
-  animation: 1.2s cubic-bezier(1, 0, 0.6, 1) 0.5s translateY both;
+  animation: 1.5s cubic-bezier(0.78, 0.16, 1, 1) 0.6s translateY both;
 }
 
 .wrapper .content:nth-child(1) img {
-  animation: 1.5s cubic-bezier(0.8, 0, 0.6, 1) 0.3s transitionImg both;
+  animation: 2s cubic-bezier(0.8, 0, 0.6, 1) 0.45s transitionImg both;
 }
 .wrapper .content:nth-child(2) img {
-  animation: 1.5s cubic-bezier(0.8, 0, 0.6, 1) 0.5s transitionImg both;
+  animation: 2s cubic-bezier(0.8, 0, 0.6, 1) 0.6s transitionImg both;
 }
 .wrapper .content:nth-child(3) img {
-  animation: 1.5s cubic-bezier(0.8, 0, 0.6, 1) 0.8s transitionImg both;
+  animation: 2s cubic-bezier(0.8, 0, 0.6, 1) 0.75s transitionImg both;
 }
 
 /* KEYFRAMES */
@@ -166,6 +167,41 @@ li {
   }
   100% {
     transform: translateY(100%);
+  }
+}
+
+@keyframes scaleUp {
+  0% {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  30% {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  80% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes scaleDown {
+  0% {
+    opacity: 0;
+    transform: scale(1.15);
+  }
+  30% {
+    opacity: 0;
+    transform: scale(1.15);
+  }
+  80% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
   }
 }
 
